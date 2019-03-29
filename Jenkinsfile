@@ -1,4 +1,4 @@
-def project = 'REPLACE_WITH_YOUR_PROJECT_ID'
+def project = 'xenon-poet-229608'
 def  appName = 'gceme'
 def  feSvcName = "${appName}-frontend"
 def  imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
@@ -16,7 +16,7 @@ labels:
   component: ci
 spec:
   # Use service account that can deploy to all namespaces
-  serviceAccountName: cd-jenkins
+  serviceAccountName: default
   containers:
   - name: golang
     image: golang:1.10
